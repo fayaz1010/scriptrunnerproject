@@ -8,4 +8,4 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  logsBucket: gs://scriptrunner-build-logs
+  logBucket: gs://scriptrunner-build-logs
