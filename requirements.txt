@@ -1,0 +1,5 @@
+flask==2.0.2
+werkzeug==2.0.2
+google-cloud-storage==1.42.3
+google-cloud-firestore==2.4.0
+apscheduler==3.7.0

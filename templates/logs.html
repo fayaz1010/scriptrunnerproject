@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Logs</title>
+</head>
+<body>
+    <h1>Execution Logs</h1>
+    <ul>
+        {% for log in logs %}
+            <li>{{ log.id }}: {{ log.to_dict() }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Back to Home</a>
+</body>
+</html>
