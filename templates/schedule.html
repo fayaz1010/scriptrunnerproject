@@ -6,9 +6,14 @@
 </head>
 <body>
     <h1>Schedule Task</h1>
-    <form method="post">
-        <!-- Form fields to schedule a task -->
-        <input type="submit" value="Schedule">
+    <form method="POST" action="/schedule">
+        <label for="script_name">Script Name:</label>
+        <input type="text" id="script_name" name="script_name"><br><br>
+        <label for="bucket_name">Bucket Name:</label>
+        <input type="text" id="bucket_name" name="bucket_name"><br><br>
+        <label for="schedule_time">Schedule Time:</label>
+        <input type="text" id="schedule_time" name="schedule_time"><br><br>
+        <button type="submit">Schedule</button>
     </form>
     <a href="/">Back to Home</a>
 </body>
