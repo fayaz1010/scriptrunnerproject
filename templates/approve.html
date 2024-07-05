@@ -6,9 +6,12 @@
 </head>
 <body>
     <h1>Approve Script</h1>
-    <form method="post">
-        <!-- Form fields to approve a script -->
-        <input type="submit" value="Approve">
+    <form method="POST" action="/approve">
+        <label for="script_name">Script Name:</label>
+        <input type="text" id="script_name" name="script_name"><br><br>
+        <label for="bucket_name">Bucket Name:</label>
+        <input type="text" id="bucket_name" name="bucket_name"><br><br>
+        <button type="submit">Approve</button>
     </form>
     <a href="/">Back to Home</a>
 </body>
