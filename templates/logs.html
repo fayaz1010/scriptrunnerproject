@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>View Logs</title>
+    <title>Logs</title>
 </head>
 <body>
-    <h1>Execution Logs</h1>
+    <h1>Logs</h1>
     <ul>
         {% for log in logs %}
-            <li>{{ log.id }}: {{ log.to_dict() }}</li>
+            <li>{{ log.id }}: {{ log }}</li>
         {% endfor %}
     </ul>
     <a href="/">Back to Home</a>
