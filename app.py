@@ -39,10 +39,7 @@ def approve_script():
             bucket_name = request.form["bucket_name"]
             logging.debug(f"Approving script: {script_name} in bucket: {bucket_name}")
 
-            # Approve script logic here
-            # Placeholder logic for example
             if script_name and bucket_name:
-                # Simulate approving script
                 logging.info(f"Script {script_name} approved successfully.")
                 return "Script approved successfully", 200
             else:
@@ -60,10 +57,7 @@ def edit_script():
             bucket_name = request.form["bucket_name"]
             logging.debug(f"Editing script: {script_name} in bucket: {bucket_name}")
 
-            # Edit script logic here
-            # Placeholder logic for example
             if script_name and bucket_name:
-                # Simulate editing script
                 logging.info(f"Script {script_name} edited successfully.")
                 return "Script edited successfully", 200
             else:
@@ -82,10 +76,7 @@ def schedule_task():
             schedule_time = request.form["schedule_time"]
             logging.debug(f"Scheduling script: {script_name} in bucket: {bucket_name} at {schedule_time}")
 
-            # Schedule task logic here
-            # Placeholder logic for example
             if script_name and bucket_name and schedule_time:
-                # Simulate scheduling task
                 logging.info(f"Script {script_name} scheduled successfully.")
                 return "Script scheduled successfully", 200
             else:
@@ -103,10 +94,7 @@ def publish_script():
             bucket_name = request.form["bucket_name"]
             logging.debug(f"Publishing script: {script_name} in bucket: {bucket_name}")
 
-            # Publish script logic here
-            # Placeholder logic for example
             if script_name and bucket_name:
-                # Simulate publishing script
                 logging.info(f"Script {script_name} published successfully.")
                 return "Script published successfully", 200
             else:
@@ -126,14 +114,12 @@ def run_script():
 
         logging.debug(f"Running script: {script_name} from bucket: {bucket_name} with argument: {argument}")
 
-        # Download the script from Cloud Storage
         storage_client = storage.Client()
         bucket = storage_client.bucket(bucket_name)
         blob = bucket.blob(script_name)
         script_path = f"/tmp/{script_name}"
         blob.download_to_filename(script_path)
 
-        # Execute the script
         result = subprocess.run(['python', script_path, argument], capture_output=True, text=True)
 
         response = {
@@ -145,7 +131,6 @@ def run_script():
         logging.debug(f"Script output: {result.stdout}")
         logging.error(f"Script error: {result.stderr}")
 
-        # Store the execution result in Firestore
         firestore_client = firestore.Client()
         doc_ref = firestore_client.collection('execution_logs').document()
         doc_ref.set({
