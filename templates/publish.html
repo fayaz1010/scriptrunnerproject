@@ -6,9 +6,12 @@
 </head>
 <body>
     <h1>Publish Script</h1>
-    <form method="post">
-        <!-- Form fields to publish a script -->
-        <input type="submit" value="Publish">
+    <form method="POST" action="/publish">
+        <label for="script_name">Script Name:</label>
+        <input type="text" id="script_name" name="script_name"><br><br>
+        <label for="bucket_name">Bucket Name:</label>
+        <input type="text" id="bucket_name" name="bucket_name"><br><br>
+        <button type="submit">Publish</button>
     </form>
     <a href="/">Back to Home</a>
 </body>
